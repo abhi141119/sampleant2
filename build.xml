@@ -13,7 +13,7 @@ Goals :
  Note : Clean up the previous build content files as the first step in the build process.
 -->
 
-<project name="javademo" default="compile-tests">
+<project name="javademo" default="package">
 
 <property file="build.properties"/>
 <property name="appversion" value="2.0"/>
@@ -57,14 +57,4 @@ Goals :
 		</zip>
 
 	</target>
-	<target name="compile-tests" depends="package">
-		<javac srcdir="test"
-         destdir="build/test/classes"
-         classpath="build/classes"
-           />
-	
-	</target>
-	
-
-
 </project>
