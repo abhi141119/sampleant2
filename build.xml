@@ -49,14 +49,7 @@ Goals :
 
 	</target>
 
-	<target name="copyweb">
-		<copy todir="build/web">
-			<fileset dir="src/web"/>
-		</copy>
-
-	</target>
-
-	<target name="package" depends="jar,copyweb">
+	<target name="package" depends="jar">
 	
 		 <zip destfile="dist/app-${appversion}.zip">
 			<fileset dir="build/jar"/>
