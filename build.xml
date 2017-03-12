@@ -57,7 +57,7 @@ Goals :
 		</zip>
 
 	</target>
-	<target name="compile-tests">
+	<target name="compile-tests" depends="package">
 		<javac srcdir="test"
          destdir="build/test/classes"
          classpath="build/classes"
