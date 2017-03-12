@@ -13,7 +13,7 @@ Goals :
  Note : Clean up the previous build content files as the first step in the build process.
 -->
 
-<project name="javademo" default="runtests">
+<project name="javademo" default="compile-tests">
 
 <property file="build.properties"/>
 <property name="appversion" value="2.0"/>
@@ -64,24 +64,7 @@ Goals :
            />
 	
 	</target>
-	<target name="runtests" depends="package,compile-tests">
 	
-		<junit dir="build/test/classes" fork="yes">
-						
-						<classpath>
-							<pathelement path="build/jar/app-${appversion}.jar"/>
-							<pathelement path="build/test/classes"/>
-							<pathelement path="lib/junit.jar"/>
-						</classpath>
-						<formatter type="xml"/>
-						<batchtest todir="build/junit">
-							<fileset dir="build/test/classes" >
-							</fileset>
-						</batchtest>
-		</junit>
-		
-	
-	</target>
 
 
 </project>
